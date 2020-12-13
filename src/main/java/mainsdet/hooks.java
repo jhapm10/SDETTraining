@@ -34,7 +34,7 @@ public class hooks extends configuration{
 	@AfterStep
 	public void afterStep() throws Throwable {
 		embedScreenshot();
-		System.out.println("Hi I am also running");
+		
 	}
 
 }
