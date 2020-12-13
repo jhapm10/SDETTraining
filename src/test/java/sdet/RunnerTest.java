@@ -6,7 +6,7 @@ import io.cucumber.junit.CucumberOptions;
 
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features="C:/Users/AnjaliJha/eclipse-workspace/assignment/FeatureFolder/Registeration.feature",
+@CucumberOptions(features="./FeatureFolder/Registeration.feature",
 glue= {"sdet","mainsdet"},
 stepNotifications=true,
 //tags= "@LoginCheck",
