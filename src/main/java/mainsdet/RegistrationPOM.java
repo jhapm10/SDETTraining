@@ -3,6 +3,7 @@ package mainsdet;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -14,6 +15,9 @@ public class RegistrationPOM extends configuration
 
 //By SignupButton= By.xpath("//a[@href="http://elearningm1.upskills.in/main/auth/inscription.php"]"));
 By SignupButton=By.partialLinkText("Sign up!");
+By Login= By.id("login");
+By urPassword=By.id("password");
+By loginButton=By.id("form-login_submitAuth");
 By FirstName=By.id("registration_firstname");
 By LastName=By.id("registration_lastname");
 By Email=By.id("registration_email");
@@ -26,7 +30,9 @@ By SuccessFullRegDetail = By.xpath("//*[text()[contains(.,'Dear Anjali1 Jha1,')]
 By RegistrationTitle = By.xpath("//*[@class=\"breadcrumb\"]");
 By TextOfSuccessMessage=By.xpath("//*[@class=\"col-xs-12 col-md-12\"]/p");
 By dropdownOnHomepage=By.xpath("//*[@class=\"dropdown-toggle\"]");
-By checkEmail=By.xpath("//*[@class=\"fa fa-envelope-o\"]");
+//By checkEmail=By.xpath("//*[@class=\"fa fa-envelope-o\"]");
+By checkEmail=By.xpath("//*[@class=\"text-center\"]/p");
+
 
 //By composeMsg=By.xpath("//*[@title=\"Compose message\"]");
 By composeMsg=By.partialLinkText("Compose");
@@ -111,34 +117,33 @@ public void clickHomeDropDown(){
 	  driver.findElement(dropdownOnHomepage).click();
 }
 
-public String EmailVerify() {
+public String EmailVerify() throws InterruptedException {
+	Thread.sleep(15000);
 	String EmailText=driver.findElement(checkEmail).getText();
 	System.out.println(EmailText);
 	return EmailText;
 }
 
 public void mailCompose() throws InterruptedException {
-	//*[@title="Homepage"]
+	
 	driver.findElement(By.xpath("//*[@title=\"Homepage\"]")).click();
-	System.out.println("Clicked HomePage");
+	
 	driver.findElement(composeMsg).click();
-	System.out.println("Clicked Composr");
 	Thread.sleep(40000);
 	driver.findElement(sendto).clear();
-	//WebDriverWait wait = new WebDriverWait(driver,30);
-	//wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@class=\"select2-selection__rendered\"]")));
 	driver.findElement(sendto).sendKeys("tst");
 	Thread.sleep(10000);
 	driver.findElement(sendto).sendKeys(Keys.ENTER);
-	System.out.println("Clicked sendTo");
-	//driver.findElement(sendto).sendKeys(Keys.ENTER);
-	System.out.println("Selected Recipient");
 	driver.findElement(subject).sendKeys("TestMail");
-	System.out.println("MailSent");
+//WebDriverWait wait = new WebDriverWait(driver, 30);
+//wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"cke_1_contents\"]")));
+
+	//driver.findElement(By.xpath("//*[@id=\"cke_1_contents\"]")).clear();
+	//driver.findElement(By.xpath("/html/body/p[2]")).sendKeys("Hi TestUser,I am sending Mail   Thanks");
+
 	driver.findElement(attachement).sendKeys("C:\\Users\\AnjaliJha\\eclipse-workspace\\assignment\\email.txt");
-	System.out.println("Attachment Set");
 	driver.findElement(sendButton).sendKeys(Keys.ENTER);
-	System.out.println("Sent Mail");
+
 
 
 	
@@ -149,6 +154,17 @@ public String getachkowledgement() {
 	System.out.println(ack);
 	
 	return  ack;
+}
+
+public void ClickLogin(){
+	  driver.findElement(loginButton).click();
+}
+
+public void setLoginInformation(String id,String pass){
+
+    driver.findElement(Login).sendKeys(id);
+    driver.findElement(urPassword).sendKeys(pass);
+
 }
 
 }

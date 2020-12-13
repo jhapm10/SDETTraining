@@ -9,7 +9,7 @@ import io.cucumber.junit.CucumberOptions;
 @CucumberOptions(features="C:/Users/AnjaliJha/eclipse-workspace/assignment/FeatureFolder/Registeration.feature",
 glue= {"sdet","mainsdet"},
 stepNotifications=true,
-tags= "@existinguserRegisteration",
+//tags= "@LoginCheck",
 monochrome=true,
 plugin = { "pretty", "html:target/cucumber-reports.html","json:target/cucumber-html-reports/cucumber.json","junit:target/cucumber-result.xml"})
 public class RunnerTest {}

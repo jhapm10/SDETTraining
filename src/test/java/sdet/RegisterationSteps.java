@@ -84,10 +84,11 @@ public class RegisterationSteps {
 	}
 
 	@And("^User verify the email as (.*)$")
-	public void user_verify_the_email_as(String email) throws Throwable {
+	public void user_verify_the_email_as(String Email) throws Throwable {
+		
 		String emailofUser = RP.EmailVerify();
 
-		assertTrue(emailofUser.equals(email));
+		assertTrue(emailofUser.equals(Email));
 
 	}
 	
@@ -100,9 +101,21 @@ public class RegisterationSteps {
 	    public void user_verify_mail_sent_message_as_something(String strArg1) throws Throwable {
 	      String ackmsg=RP.getachkowledgement();
 	      Boolean text=driver.getPageSource().contains(strArg1);
-	     //driver.getPageSource().contains(strArg1);
+	   
 	     Assert.assertTrue(text);
 	      
 			
 	    }
+	 
+	 @When("^User enters (.*) and (.*)$")
+	    public void user_enters_and(String id, String pass) throws Throwable {
+	     RP.setLoginInformation(id, pass);
+
+	    }
+	   @And("^User clicks on Login button$")
+	    public void user_clicks_on_login_button() throws Throwable {
+	    RP.ClickLogin();
+	    }
+	 
+	 
 }
