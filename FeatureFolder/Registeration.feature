@@ -23,8 +23,8 @@ Feature: Validate the User Registeration
 
     Examples: 
       | FirstName | LastName | Email            | UserName | Password    | CofirmPassword |
-      | john15    | Jha15    | aj14@gmail.com   | john15   | password@15 | password@15    |
-      | john26    | Jha26    | john26@gmail.com | john26   | password@26 | password@26    |
+      | john38 | Jha38  | aj35@gmail.com   | john38 | password@15 | password@15    |
+  #    | john44    | Jha44    | john34@gmail.com | john44   | password@26 | password@26    |
 
   @existinguserRegisteration
   Scenario Outline: Registration Scenario with Existing User

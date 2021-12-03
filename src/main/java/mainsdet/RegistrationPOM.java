@@ -28,7 +28,7 @@ By RegisterButton=By.id("registration_submit");
 By WarningSameUserRegisteration= By.xpath("//*[@class=\"alert alert-warning\"]");
 By SuccessFullRegDetail = By.xpath("//*[text()[contains(.,'Dear Anjali1 Jha1,')] or text()[contains(.,'Your personal settings have been registered.')]]");
 By RegistrationTitle = By.xpath("//*[@class=\"breadcrumb\"]");
-By TextOfSuccessMessage=By.xpath("//*[@class=\"col-xs-12 col-md-12\"]/p");
+By TextOfSuccessMessage=By.xpath("//*[@class=\"col-xs-12 col-md-12\"]/p[1]");
 By dropdownOnHomepage=By.xpath("//*[@class=\"dropdown-toggle\"]");
 //By checkEmail=By.xpath("//*[@class=\"fa fa-envelope-o\"]");
 By checkEmail=By.xpath("//*[@class=\"text-center\"]/p");

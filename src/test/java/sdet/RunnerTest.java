@@ -1,17 +1,20 @@
 package sdet;
-
 import org.junit.runner.RunWith;
-import io.cucumber.junit.Cucumber;
-import io.cucumber.junit.CucumberOptions;
+import cucumber.api.CucumberOptions;
+import cucumber.api.junit.Cucumber;
 
 
 @RunWith(Cucumber.class)
+
+
 @CucumberOptions(features="./FeatureFolder/Registeration.feature",
 glue= {"sdet","mainsdet"},
-stepNotifications=true,
-//tags= "@LoginCheck",
+
+tags= "@existinguserRegisteration",
 monochrome=true,
-plugin = { "pretty", "html:target/cucumber-reports.html","json:target/cucumber-html-reports/cucumber.json","junit:target/cucumber-result.xml"})
+plugin = { "pretty","json:target/cucumber.json",
+"html:target/cucumber-pretty"}
+)
 public class RunnerTest {}
 
 
