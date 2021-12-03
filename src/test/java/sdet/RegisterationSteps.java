@@ -30,8 +30,9 @@ public class RegisterationSteps {
 
 	@Given("^User Launch the myOrganization web application$")
 	public void user_launch_the_myorganization_web_application() throws Throwable {
-			final byte[] screenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
-			scenario.embed(screenshot, "image/png");
+//			final byte[] screenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
+//			scenario.embed(screenshot, "image/png");
+		driver.get("http://elearningm1.upskills.in/");
 	    }	
 	
 

@@ -15,6 +15,7 @@ public class hooks extends configuration{
     public void killBrowser(Scenario scenario){
 		final byte[] screenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
 		scenario.embed(screenshot, "image/png");
+		driver.quit();
     }
 	
 
